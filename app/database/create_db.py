@@ -2,6 +2,7 @@
 # This file is a script it does not have to be imported
 
 from os import getenv
+
 from boto3 import resource
 from dotenv import load_dotenv
 
