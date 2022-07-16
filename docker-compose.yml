@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  dynamodb:
+    image:  amazon/dynamodb-local
+    container_name: my-dynamodb
+    hostname: dynamodb
+    restart: always
+    volumes:
+      -  ./my-dynamodb-data:/home/dynamodblocal/data
+    ports:
+      - 8000:8000
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath /home/dynamodblocal/data/"
+
+  fastapi:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - app/.env
+    depends_on:
+      - dynamodb
