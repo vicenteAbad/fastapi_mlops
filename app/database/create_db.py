@@ -2,15 +2,22 @@
 # This file is a script it does not have to be imported
 
 from os import getenv
-
 from boto3 import resource
+from dotenv import load_dotenv
+
+load_dotenv()
+
+AWS_ACCESS_KEY_ID = getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = getenv("AWS_SECRET_ACCESS_KEY")
+REGION_NAME = getenv("REGION_NAME")
+AWS_DYNAMO_ENDPOINT = getenv("AWS_DYNAMO_ENDPOINT")
 
 dynamodb = resource(
     "dynamodb",
-    aws_access_key_id=getenv("AWS_ACCESS_KEY_ID"),
-    aws_secret_access_key=getenv("AWS_SECRET_ACCESS_KEY"),
-    region_name=getenv("REGION_NAME"),
-    endpoint_url="http://localhost:8000",
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+    region_name=REGION_NAME,
+    endpoint_url=AWS_DYNAMO_ENDPOINT,
 )
 
 
