@@ -1,5 +1,0 @@
-# environment variables defined inside a .env file
-AWS_ACCESS_KEY_ID=fakeMyKeyId
-AWS_SECRET_ACCESS_KEY=fakeSecretAccessKey
-AWS_DYNAMO_ENDPOINT=http://dynamodb:8000
-REGION_NAME=eu-west-3
