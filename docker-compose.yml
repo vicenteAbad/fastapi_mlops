@@ -13,6 +13,7 @@ services:
 
   fastapi:
     build: .
+    container_name: fastapi-mlops
     ports:
       - "3000:3000"
     env_file:

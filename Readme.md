@@ -22,7 +22,7 @@ make help
 
 ## Usage
 
-You a need a doubleit_model.pt file in app/ml/trained_models/ and shared-local-instance.db in my-dynamodb-data/
+You a need a **doubleit_model.pt** file in app/ml/trained_models/ and shared-local-instance.db in my-dynamodb-data/
 
 You can a create a shared-local-instance.db with the script create_db.py that is located in the folder database.
 
@@ -34,14 +34,17 @@ chmod +x ./app/database/create_db.py
 ./app/database/create_db.py
 ```
 
-For development mode:
-```bash
-make run-dev
-```
 For production mode:
 ```bash
 make run
 ```
+For development mode:
+```bash
+make run 
+docker stop fastapi-mlops
+make run-dev
+```
+
 Remember that for both modes you need a working database
 
 
