@@ -1,17 +1,23 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 # This file is a script it does not have to be imported
 
 from os import getenv
 
 from boto3 import resource
 from dotenv import load_dotenv
-
-load_dotenv()
+load_dotenv('../../env_dev')
 
 AWS_ACCESS_KEY_ID = getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = getenv("AWS_SECRET_ACCESS_KEY")
 REGION_NAME = getenv("REGION_NAME")
 AWS_DYNAMO_ENDPOINT = getenv("AWS_DYNAMO_ENDPOINT")
+
+
+print(AWS_ACCESS_KEY_ID)
+print(AWS_SECRET_ACCESS_KEY)
+print(REGION_NAME)
+print(AWS_DYNAMO_ENDPOINT)
+
 
 dynamodb = resource(
     "dynamodb",
