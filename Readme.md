@@ -27,12 +27,13 @@ You a need a **doubleit_model.pt** file in app/ml/trained_models/ and **shared-l
 You can a create a shared-local-instance.db with production mode and the script create_db.py that is located in the folder app/database.
 
 ```bash
+chmod o+w my-dynamodb-data/
 make install-dev-deps
 source venv/bin/activate
-chmod o+w my-dynamodb-data/
 chmod +x ./app/database/create_db.py
 make run
 ./app/database/create_db.py
+deactivate
 ```
 
 For production mode:
