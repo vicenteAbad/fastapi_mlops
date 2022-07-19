@@ -22,9 +22,9 @@ make help
 
 ## Usage
 
-You a need a **doubleit_model.pt** file in app/ml/trained_models/ and shared-local-instance.db in my-dynamodb-data/
+You a need a **doubleit_model.pt** file in app/ml/trained_models/ and **shared-local-instance.db** in my-dynamodb-data/
 
-You can a create a shared-local-instance.db with the script create_db.py that is located in the folder database.
+You can a create a shared-local-instance.db with production mode and the script create_db.py that is located in the folder app/database.
 
 ```bash
 make install-dev-deps
