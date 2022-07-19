@@ -12,9 +12,9 @@ routes_inference = APIRouter()
 @routes_inference.post("/", response_model=MLResponse)
 def inference_predict(request: MLRequest):
     prediction_list = inference_classifier.predict(input_data=request.input_data)
-    ml_respone = MLResponse(prediction=prediction_list)
-    manage_db.create(ml_respone.dict())
-    return ml_respone
+    ml_respose = MLResponse(prediction=prediction_list)
+    manage_db.create(ml_respose.dict())
+    return ml_respose
 
 
 @routes_inference.get("/{id}", response_model=MLResponse)
