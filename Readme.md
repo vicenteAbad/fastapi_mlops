@@ -28,12 +28,13 @@ You can a create a shared-local-instance.db with production mode and the script 
 
 ```bash
 chmod o+w my-dynamodb-data/
+make run
 make install-dev-deps
 source venv/bin/activate
 chmod +x ./app/database/create_db.py
-make run
 ./app/database/create_db.py
 deactivate
+make stop
 ```
 
 For production mode:
