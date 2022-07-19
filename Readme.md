@@ -28,9 +28,10 @@ You can a create a shared-local-instance.db with the script create_db.py that is
 
 ```bash
 make install-dev-deps
-source venv/bin/active
+source venv/bin/activate
 chmod o+w my-dynamodb-data/
 chmod +x ./app/database/create_db.py
+make run
 ./app/database/create_db.py
 ```
 
